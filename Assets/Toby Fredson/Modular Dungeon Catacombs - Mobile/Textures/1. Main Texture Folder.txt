@@ -1,0 +1,8 @@
+1. Main texture workflow
+
+Standard metalness shader workflow. Merged maps for the metalness/AO/Gloss.
+-----------------------
+
+*Tip
+
+To regain the channels in the "metalness/ao/gloss" (MAG) png textures, simply re-save them using an image editor, (I personally use "XnViewMP") and save it as a TIF/TGA or split and merge the channels in Substance Designer.
