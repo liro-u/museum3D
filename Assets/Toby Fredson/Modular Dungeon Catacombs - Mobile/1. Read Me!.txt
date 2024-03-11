@@ -1,0 +1,37 @@
+1. Thanks for the purchase!
+
+2. Some general information, I left notes in every folder just in case you get lost with something :)
+
+3. For more information regarding this asset pack, follow this thread: 
+https://forum.unity.com/threads/modular-dungeon-catacombs.1197031/#post-7711696
+or
+https://forum.unity.com/threads/released-modular-dungeon-pack-catacombs-development-thread-v2.398141/page-5
+
+or contact me via email: florianalexandru05@gmail.com
+
+4. Enjoy making marvelous fantasy dungeon scenes!
+---------------------
+
+Version updates fixes:
+
+-  Modular Dungeon Catacombs - Mobile V 2.0 
+
+This pack is now fully PBR and up to date. URP and HDRP supported!
+
+* Complete cosmetic change, remade textures.
+* Reduce file size and optimized textures
+* Updated Amplify shaders (fixed bugs)
+* Low poly and well optimized with performance in mind.
+* New "Toby foliage shaders" (TFS - basic version for Built-in/URP and full version for HDRP)
+
+  - Grass Foliage shader 
+
+       (Custom Amplify shader for grass): Physically-based lighting with translucency, simple wind, includes color variation, vertex Ao, and distance depth fade, supports mesh with custom normals. Wind and other parameters can be controlled globally through the (upcoming) wind script.
+
+  - Tree bark and leaf shader (includes custom billboard shader)
+
+       (Custom Amplify shader for trees): Physically-based lighting with translucency, branch bending, wind, and leaf fluttering, supports trees with custom normals on leaves, includes color variation and vertex Ao. Wind and other parameters can be controlled globally through the (upcoming) wind script.
+
+(At the moment the wind is controlled directly through the shader so you will have to match both values of the bark and leaves together.)
+
+---------------------
