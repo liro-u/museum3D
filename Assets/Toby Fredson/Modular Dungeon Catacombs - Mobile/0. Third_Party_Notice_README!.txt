@@ -1,0 +1,13 @@
+--------------
+Contained in this package are runtime components of the "Custom Tree Importer" asset package by forst - https://assetstore.unity.com/packages/tools/modeling/custom-tree-importer-21079
+These components enable foliage wind and leaf shaders to function on assets modified using this Unity extension, they do not offer the core functionality of the Custom Tree Importer extension itself.
+
+Custom Tree Importer shaders will not function on assets not authored using the Custom Tree Importer.
+For full functionality of the Custom Tree Importer, purchase it on the asset store from - https://assetstore.unity.com/packages/tools/modeling/custom-tree-importer-21079
+
+"Custom Tree Importer" is owned by forst, Tobyfredson claims no ownership of or redistribution rights to any of its parts.
+The Custom Tree Importer components included in this package were included in this product with their publisher's permission.
+--------------
+__________________________________________
+
+This asset only contains the CTI tree billboard shader; "CTI_LOD_Billboard". Gained permission to use from the autor "forst".
