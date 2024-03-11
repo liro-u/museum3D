@@ -1,0 +1,10 @@
+1. Custom Amplify shaders
+
+Made with Amplify shader editor: https://assetstore.unity.com/packages/tools/visual-scripting/amplify-shader-editor-68570 by Amplify Creations
+
+Feel free to edit these in the Amplify shader editor and use them in your projects!
+---------
+
+2. WavingDoublePassEdit_Shader
+
+Slightly edited terrain grass shader. Works the same way as the old one. The wind is controlled through the terrain "bending slider", "speed" and "size" do nothing. Improved shading, PBR lit, works with reflection probes, softer looking shading, improved wind. (4 textures recommended otherwise the wind will not work properly but you can use as many textures as you wish.)
