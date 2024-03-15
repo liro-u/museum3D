@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Scene Test.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/MuseeV1.unity
-    guid: c121b07f49ee4d543a57743109f4f08d
-  - enabled: 0
-    path: Assets/Scenes/MuseeV2Test.unity
-    guid: bcbea6157441231498401c8de193519c
   - enabled: 1
+    path: Assets/Scenes/Zone1.unity
+    guid: 6b37ca0ae2422bc49b8b4a3c0824a8af
+  - enabled: 1
+    path: Assets/Scenes/TransitionDoor.unity
+    guid: 3614876e35dd89042bc7acb9708e98bf
+  - enabled: 1
+    path: Assets/Scenes/Zone2.unity
+    guid: 717b2d98280b1914789902e6f86a8423
+  - enabled: 0
     path: Assets/Scenes/MuseeV2.unity
     guid: f44193e6fcfa25445a32a7b676b54fc7
   m_configObjects: {}

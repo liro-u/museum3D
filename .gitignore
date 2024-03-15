@@ -11,6 +11,8 @@
 /[Uu]ser[Ss]ettings/
 /.vscode
 .vsconfig
+/VirtualMuseum_Data/
+/MonoBleedingEdge/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

@@ -7,6 +7,8 @@ TagManager:
   - ingore
   - Fire
   - No Ambient
+  - Exit
+  - Enter1
   layers:
   - Default
   - TransparentFX
