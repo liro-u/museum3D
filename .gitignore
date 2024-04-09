@@ -12,6 +12,7 @@
 /.vscode
 .vsconfig
 /VirtualMuseum_Data/
+VirtualMuseum.exe
 /MonoBleedingEdge/
 
 # MemoryCaptures can get excessive in size.
