@@ -9,6 +9,8 @@ TagManager:
   - No Ambient
   - Exit
   - Enter1
+  - Mont
+  - Chartres
   layers:
   - Default
   - TransparentFX
