@@ -33,7 +33,7 @@ public class RaycastCamera : MonoBehaviour
     {
         TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
         
-        if (Input.GetKeyUp(KeyCode.F))
+       /* if (Input.GetKeyUp(KeyCode.F))
         {
             if (isPictureActive)
             {
@@ -45,17 +45,17 @@ public class RaycastCamera : MonoBehaviour
                 video.SetActive(false);
                 isVideoActive = false;
             }
-        }
+        }*/
         int layerMask = 1 << 7;
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 5, layerMask))
         {
             if (!isText)
             {
-                text.SetText("Restez appuyé sur 'F' pour afficher l'élément en grand écran");
+                text.SetText("Appuyé sur 'F' pour afficher l'élément en grand écran");
                 isText = true;
             }
-
+            
             if (Input.GetKeyDown(KeyCode.F))
             {
                 StartCoroutine(ClearTextDelayed(text));
@@ -78,17 +78,34 @@ public class RaycastCamera : MonoBehaviour
     IEnumerator ClearTextDelayed(TextMeshProUGUI text)
     {
         yield return null; // Wait for the next frame
-        text.SetText(""); // Clear the text
+        text.SetText("Appuyé sur 'F' pour fermer l'élément en grand écran"); // Clear the text
+    }
+
+    IEnumerator FadeIn(GameObject mediaObject, float duration)
+    {
+        CanvasGroup canvasGroup = mediaObject.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = mediaObject.AddComponent<CanvasGroup>();
+        }
+        canvasGroup.alpha = 0f; // Bắt đầu từ trong suốt
+        while (canvasGroup.alpha < 1)
+        {
+            canvasGroup.alpha += Time.deltaTime / duration; // Tăng dần độ trong suốt
+            yield return null;
+        }
+        canvasGroup.alpha = 1; // Đảm bảo đối tượng không còn trong suốt nữa
     }
 
     void ToggleMedia(RaycastHit hit)
     {
-        if (!isPictureActive)
+        if (!isPictureActive && !isVideoActive)
         {
-            if (hit.collider.CompareTag("Chartres"))
+            if (hit.collider.CompareTag("Chartres") || hit.collider.CompareTag("video"))
             {
                 video.SetActive(true);
                 isVideoActive = true;
+                StartCoroutine(FadeIn(video, 2f));
             }
             else
             {
@@ -96,13 +113,18 @@ public class RaycastCamera : MonoBehaviour
                 isPictureActive = true;
                 pictureTexture = GetTexture(hit.collider.gameObject);
                 SetTexture(pictureTexture);
+                StartCoroutine(FadeIn(picture, 2f));
             }
-        }
-        else if (!isVideoActive)
+        } else if(isPictureActive && !isVideoActive)
         {
-            video.SetActive(true);
+            picture.SetActive(false);
             isPictureActive = false;
-            isVideoActive = true;
+        }
+        else if (!isPictureActive && isVideoActive)
+        {
+            video.SetActive(false);
+            //isPictureActive = false;
+            isVideoActive = false;
         }
     }
 
