@@ -33,19 +33,7 @@ public class RaycastCamera : MonoBehaviour
     {
         TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
         
-       /* if (Input.GetKeyUp(KeyCode.F))
-        {
-            if (isPictureActive)
-            {
-                picture.SetActive(false);
-                isPictureActive = false;
-            }
-            if (isVideoActive)
-            {
-                video.SetActive(false);
-                isVideoActive = false;
-            }
-        }*/
+        
         int layerMask = 1 << 7;
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 5, layerMask))
@@ -59,14 +47,35 @@ public class RaycastCamera : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 StartCoroutine(ClearTextDelayed(text));
-                ToggleMedia(hit);
+                ToggleMedia(hit, text);
                 isText = false;
             }
             //Debug.Log("Did Hit");
         }
          else
         {
-            if (isText)
+            
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if ((isPictureActive && !isVideoActive) || text.text == "Appuyé sur 'F' pour fermer l'élément en grand écran")
+                {
+                    picture.SetActive(false);
+                    isPictureActive = false;
+                }
+                if (!isPictureActive && isVideoActive)
+                {
+                    video.SetActive(false);
+                    //isPictureActive = false;
+                    isVideoActive = false;
+                }
+            }
+
+            if (isText && (isPictureActive || isVideoActive))
+            {
+                text.text = "Appuyé sur 'F' pour fermer l'élément en grand écran";
+                //isText = false;
+            } else
             {
                 text.text = "";
                 isText = false;
@@ -97,7 +106,7 @@ public class RaycastCamera : MonoBehaviour
         canvasGroup.alpha = 1; // Đảm bảo đối tượng không còn trong suốt nữa
     }
 
-    void ToggleMedia(RaycastHit hit)
+    void ToggleMedia(RaycastHit hit, TextMeshProUGUI text)
     {
         if (!isPictureActive && !isVideoActive)
         {
@@ -115,12 +124,12 @@ public class RaycastCamera : MonoBehaviour
                 SetTexture(pictureTexture);
                 StartCoroutine(FadeIn(picture, 2f));
             }
-        } else if(isPictureActive && !isVideoActive)
+        } else if((isPictureActive && !isVideoActive))
         {
             picture.SetActive(false);
             isPictureActive = false;
         }
-        else if (!isPictureActive && isVideoActive)
+        else if ((!isPictureActive && isVideoActive))
         {
             video.SetActive(false);
             //isPictureActive = false;
