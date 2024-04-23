@@ -14,6 +14,8 @@ public class RaycastCamera : MonoBehaviour
     private bool isText = true;
     private Texture pictureTexture;
     private const string EnterChartresTag = "Chartres";
+    private const string EnterMontSaintMichelTag = "Mont";
+    private const string Enter1Tag = "Enter1";
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,18 @@ public class RaycastCamera : MonoBehaviour
                 StartCoroutine(ClearTextDelayed(text));
                 ToggleMedia(hit, text);
                 isText = false;
+            }
+
+            if (hit.collider.CompareTag(EnterMontSaintMichelTag))
+            {
+                text.SetText("Touchons la porte et appuyez sur E pour ouvrir le lien");
+                isText = true;
+            }
+
+            if (hit.collider.CompareTag(Enter1Tag))
+            {
+                text.SetText("Touchons la porte et appuyez sur E pour aller dans la zone 2");
+                isText = true;
             }
             //Debug.Log("Did Hit");
         }
@@ -150,4 +164,5 @@ public class RaycastCamera : MonoBehaviour
         picture.GetComponent<AspectRatioFitter>().aspectRatio = aspectRatio;
         picture.GetComponent<RawImage>().texture = texture;
     }
+
 }

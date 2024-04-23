@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerColliding : MonoBehaviour
 {
@@ -43,6 +45,11 @@ public class PlayerColliding : MonoBehaviour
     private bool haveGun = false;
     private bool FLisOn = false;
 
+    private bool canOpenURL = false;
+    private bool canEnter1 = false;
+    string url1 = "https://www.timographie360.fr/visites/visite-virtuelle/CMN/mont-saint-michel/?fbclid=IwAR2iypzYLU5_U4iuZESqf43Q1oWH47nn3OW0hdQ4TlJcadeTX2MWmJZcQVM";
+
+
     private void Awake()
     {
 
@@ -55,6 +62,7 @@ public class PlayerColliding : MonoBehaviour
 
     private void Update()
     {
+
         if (canPickUpGun && Input.GetKeyDown(KeyCode.E))
         {
             haveGun = true;
@@ -81,7 +89,15 @@ public class PlayerColliding : MonoBehaviour
             _gameManager.setActive(1);
             _gameManager.canvas.transform.GetChild(8).gameObject.SetActive(true);
         }
+        if (canOpenURL && Input.GetKeyDown(KeyCode.E))
+        {
+            Application.OpenURL(url1);
+        }
 
+        if (canEnter1 && Input.GetKeyDown(KeyCode.E))
+        {
+            _gameManager.Enter1();
+        }
 
 
 
@@ -172,17 +188,24 @@ public class PlayerColliding : MonoBehaviour
 
         if (collision.gameObject.CompareTag(Enter1Tag))
         {
-            _gameManager.Enter1();
+            canEnter1 = true;  
         }
 
         if (collision.gameObject.CompareTag(EnterMontSaintMichelTag))
         {
-            Application.OpenURL(url1);
+            canOpenURL = true;
         }
     }
 
     public void OnCollisionExit(Collision collision)
     {
-    
+        if (collision.gameObject.CompareTag(EnterMontSaintMichelTag))
+        {
+            canOpenURL = false;
+        }
+        if (collision.gameObject.CompareTag(Enter1Tag))
+        {
+            canEnter1 = false;
+        }
     }
 }
