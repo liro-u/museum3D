@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private int sceneNumber = 0; // Scene number tracking
     [SerializeField] private AudioSource soundDeath;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] public Canvas canvas;
+    [SerializeField] public Transform canvas;
 
     // To remember player's last position in each scene
     private Vector3 newPosition = new Vector3(1.0f, 1.0f, 1.0f); // Assuming a maximum of 10 scenes for example
@@ -30,18 +30,18 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogWarning("Player Transform is not set in GameManager.");
             }
-/*
+
             if (canvas != null)
             {
                 DontDestroyOnLoad(canvas.gameObject);
-                for (int i = 0; i <= 4; i++){
+                /*for (int i = 0; i <= 4; i++){
                     canvas.transform.GetChild(i).gameObject.SetActive(false);
-                }
+                }*/
             }
             else
             {
                 Debug.LogWarning("Canvas is not set in GameManager.");
-            }*/
+            }
         }
         else
         {
@@ -96,40 +96,11 @@ public class GameManager : MonoBehaviour
         if (playerTransform != null) {
             newPosition = (sceneNumber == 0) ? new Vector3(116.06f, -17.95f, 95.74f) : new Vector3(-2.3f, 1.0f, 2.3f);
             playerTransform.gameObject.SetActive(false);
+            canvas.gameObject.SetActive(false);
         }
 
         // Toggle between scene 0 and 1
         sceneNumber = (sceneNumber == 0) ? 1 : 0;
-        SceneManager.LoadScene(1);
-    }
-
-    public void Door2()
-    {
-        if (playerTransform != null)
-        {
-            newPosition = (sceneNumber == 1) ? new Vector3(20.9f, 1.0f, -3.34f) : new Vector3(6f, 1.0f, -3.34f);
-            playerTransform.gameObject.SetActive(false);
-        }
-
-        
-
-        // Toggle between scene 0 and 1
-        sceneNumber = (sceneNumber == 1) ? 2 : 1;
-
-        SceneManager.LoadScene(1);
-
-    }
-
-    public void Door3()
-    {
-        if (playerTransform != null)
-        {
-            newPosition = (sceneNumber == 1) ? new Vector3(18.9f, 1.0f, -15.34f) : new Vector3(5.3f, 1.0f, -0.34f);
-            playerTransform.gameObject.SetActive(false);
-        }
-
-        // Toggle between scene 0 and 1
-        sceneNumber = (sceneNumber == 1) ? 3 : 1;
         SceneManager.LoadScene(1);
     }
 
@@ -138,6 +109,7 @@ public class GameManager : MonoBehaviour
         if (playerTransform != null) {
             playerTransform.position = newPosition;
             playerTransform.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(true);
             Debug.Log("Player position after scene load: " + playerTransform.position);
         }
 

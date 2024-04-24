@@ -14,8 +14,10 @@ public class RaycastCamera : MonoBehaviour
     private bool isText = true;
     private Texture pictureTexture;
     private const string EnterChartresTag = "Chartres";
+
+    private const string EnterGPTag = "GuyonProvisoire";
     private const string EnterMontSaintMichelTag = "Mont";
-    private const string Enter1Tag = "Enter1";
+    private const string ExitTag = "Exit";
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,7 @@ public class RaycastCamera : MonoBehaviour
         {
             if (!isText)
             {
-                text.SetText("Appuyé sur 'F' pour afficher l'élément en grand écran");
+                text.SetText("Appuyez sur 'F' pour afficher l'élément en grand écran");
                 isText = true;
             }
             
@@ -55,13 +57,19 @@ public class RaycastCamera : MonoBehaviour
 
             if (hit.collider.CompareTag(EnterMontSaintMichelTag))
             {
-                text.SetText("Touchons la porte et appuyez sur E pour ouvrir le lien");
+                text.SetText("Approchez vous de la porte et appuyez sur O pour terminer votre jeu au mont Saint Michel");
                 isText = true;
             }
 
-            if (hit.collider.CompareTag(Enter1Tag))
+            if (hit.collider.CompareTag(ExitTag))
             {
-                text.SetText("Touchons la porte et appuyez sur E pour aller dans la zone 2");
+                text.SetText("Traversez cette porte pour aller dans la zone 2, vous ne pourez plus revenir en arrière");
+                isText = true;
+            }
+
+            if (hit.collider.CompareTag(EnterGPTag))
+            {
+                text.SetText("Vous êtes dans la zone 1, vous ne pourez plus revenir en arrière à la Roche Guyon");
                 isText = true;
             }
             //Debug.Log("Did Hit");
@@ -72,7 +80,7 @@ public class RaycastCamera : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if ((isPictureActive && !isVideoActive) || text.text == "Appuyé sur 'F' pour fermer l'élément en grand écran")
+                if ((isPictureActive && !isVideoActive) || text.text == "Appuyez sur 'F' pour fermer l'élément")
                 {
                     picture.SetActive(false);
                     isPictureActive = false;
@@ -87,7 +95,7 @@ public class RaycastCamera : MonoBehaviour
 
             if (isText && (isPictureActive || isVideoActive))
             {
-                text.text = "Appuyé sur 'F' pour fermer l'élément en grand écran";
+                text.text = "Appuyez sur 'F' pour fermer l'élément";
                 //isText = false;
             } else
             {
@@ -101,7 +109,7 @@ public class RaycastCamera : MonoBehaviour
     IEnumerator ClearTextDelayed(TextMeshProUGUI text)
     {
         yield return null; // Wait for the next frame
-        text.SetText("Appuyé sur 'F' pour fermer l'élément en grand écran"); // Clear the text
+        text.SetText("Appuyez sur 'F' pour fermer l'élément");
     }
 
     IEnumerator FadeIn(GameObject mediaObject, float duration)
@@ -111,13 +119,13 @@ public class RaycastCamera : MonoBehaviour
         {
             canvasGroup = mediaObject.AddComponent<CanvasGroup>();
         }
-        canvasGroup.alpha = 0f; // Bắt đầu từ trong suốt
+        canvasGroup.alpha = 0f;
         while (canvasGroup.alpha < 1)
         {
-            canvasGroup.alpha += Time.deltaTime / duration; // Tăng dần độ trong suốt
+            canvasGroup.alpha += Time.deltaTime / duration;
             yield return null;
         }
-        canvasGroup.alpha = 1; // Đảm bảo đối tượng không còn trong suốt nữa
+        canvasGroup.alpha = 1;
     }
 
     void ToggleMedia(RaycastHit hit, TextMeshProUGUI text)
@@ -151,7 +159,6 @@ public class RaycastCamera : MonoBehaviour
         }
     }
 
-
     Texture GetTexture(GameObject hit)
     {
         Material texture = hit.GetComponent<HG.DeferredDecals.Decal>().DecalMaterial;
@@ -164,5 +171,4 @@ public class RaycastCamera : MonoBehaviour
         picture.GetComponent<AspectRatioFitter>().aspectRatio = aspectRatio;
         picture.GetComponent<RawImage>().texture = texture;
     }
-
 }
