@@ -60,36 +60,11 @@ public class GameManager : MonoBehaviour
             canvas.transform.GetChild(set).gameObject.SetActive(true);
         }
     }
-/*
-    public void GameOver()
-    {
-        if (soundDeath != null) {
-            soundDeath.Play();
-        }
-        Destroy(canvas.gameObject);
-        Destroy(playerTransform.gameObject);
-        //Destroy(this);
-        StartCoroutine(LoadLevelAfterDelay());
-    }
-
-    IEnumerator LoadLevelAfterDelay()
-    {
-        SceneManager.LoadScene(8);
-
-        yield return new WaitForSeconds(5);
-
-        SceneManager.LoadScene(0);
-    }
-
-    public void selfDelete()
-    {
-        Destroy(this);
-    }
 
     public void Won()
     {
-        SceneManager.LoadScene(9);
-    }*/
+        SceneManager.LoadScene(3);
+    }
 
     public void Door1()
     {
@@ -118,19 +93,10 @@ public class GameManager : MonoBehaviour
         if(sceneNumber == 1)
         {
             SceneManager.LoadScene(2);
-        } else if (sceneNumber == 2)
+        } /*else if (sceneNumber == 2)
         {
             SceneManager.LoadScene(5);
-        } else if (sceneNumber == 3)
-        {
-            SceneManager.LoadScene(6);
-        } else if (sceneNumber == 0)
-        {
-            SceneManager.LoadScene(4);
-        }
-
-
-        //SceneManager.LoadScene(sceneNumber == 1 ? 2 : 4);
+        }*/
     }
 
 }

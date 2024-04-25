@@ -14,7 +14,7 @@ public class RaycastCamera : MonoBehaviour
     private bool isText = true;
     private Texture pictureTexture;
     private const string EnterChartresTag = "Chartres";
-
+    private const string EnterIgnoreTag = "ingore";
     private const string EnterGPTag = "GuyonProvisoire";
     private const string EnterMontSaintMichelTag = "Mont";
     private const string ExitTag = "Exit";
@@ -70,6 +70,12 @@ public class RaycastCamera : MonoBehaviour
             if (hit.collider.CompareTag(EnterGPTag))
             {
                 text.SetText("Vous êtes dans la zone 1, vous ne pourez plus revenir en arrière à la Roche Guyon");
+                isText = true;
+            }
+
+            if (hit.collider.CompareTag(EnterIgnoreTag))
+            {
+                text.SetText("Vous êtes dans la zone 2, vous ne pourez plus revenir à la zone 1, allez tout droit pour aller au Mont Saint Michel");
                 isText = true;
             }
             //Debug.Log("Did Hit");

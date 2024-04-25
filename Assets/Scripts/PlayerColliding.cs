@@ -16,7 +16,6 @@ public class PlayerColliding : MonoBehaviour
     private bool canOpenURL = false;
     string url1 = "https://www.timographie360.fr/visites/visite-virtuelle/CMN/mont-saint-michel/?fbclid=IwAR2iypzYLU5_U4iuZESqf43Q1oWH47nn3OW0hdQ4TlJcadeTX2MWmJZcQVM";
 
-
     private void Awake()
     {
 
@@ -29,15 +28,15 @@ public class PlayerColliding : MonoBehaviour
 
     private void Update()
     {
-        if (canOpenURL && Input.GetKeyDown(KeyCode.E))
+        if (canOpenURL && Input.GetKeyDown(KeyCode.O))
         {
             Application.OpenURL(url1);
+            _gameManager.Won();
         }
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        string url1 = "https://www.timographie360.fr/visites/visite-virtuelle/CMN/mont-saint-michel/?fbclid=IwAR2iypzYLU5_U4iuZESqf43Q1oWH47nn3OW0hdQ4TlJcadeTX2MWmJZcQVM";
         if (collision.gameObject.CompareTag(ExitTag))
         {
             _gameManager.Door1();

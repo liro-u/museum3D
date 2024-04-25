@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zone2.unity
     guid: 717b2d98280b1914789902e6f86a8423
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 8bfb75e81da1d3e43acb2fda0f5f03fa
   - enabled: 0
     path: Assets/Scenes/MuseeV2.unity
     guid: f44193e6fcfa25445a32a7b676b54fc7
