@@ -1,0 +1,36 @@
+# 
+# Wavefront material file
+# Created in RealityCapture v1.0.3.4658
+# www.capturingreality.com
+# 
+
+newmtl MSM_860k_tex_Material
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+
+newmtl MSM_860k_tex_Material_u1_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd MSM_860k_tex_u1_v1.jpg
+
+newmtl MSM_860k_tex_Material_u2_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd MSM_860k_tex_u2_v1.jpg
+
+newmtl MSM_860k_tex_Material_u1_v2
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd MSM_860k_tex_u1_v2.jpg
