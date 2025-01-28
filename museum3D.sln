@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{CA5BBAAC-D19C-0386-B0AC-5EA707B01714}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HG.DeferredDecals.Runtime", "HG.DeferredDecals.Runtime.csproj", "{4E5ED136-17AE-332C-2317-D351C0872350}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{16EBDDEF-823B-DEE5-1843-C6BB725DA54D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HG.DeferredDecals.Runtime", "HG.DeferredDecals.Runtime.csproj", "{4E5ED136-17AE-332C-2317-D351C0872350}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HG.DeferredDecals.Editor", "HG.DeferredDecals.Editor.csproj", "{8869C764-686B-A6B2-E6AC-BBCA9BB6FF08}"
 EndProject
@@ -19,14 +19,14 @@ Global
 		{CA5BBAAC-D19C-0386-B0AC-5EA707B01714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA5BBAAC-D19C-0386-B0AC-5EA707B01714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA5BBAAC-D19C-0386-B0AC-5EA707B01714}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E5ED136-17AE-332C-2317-D351C0872350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E5ED136-17AE-332C-2317-D351C0872350}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E5ED136-17AE-332C-2317-D351C0872350}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E5ED136-17AE-332C-2317-D351C0872350}.Release|Any CPU.Build.0 = Release|Any CPU
 		{16EBDDEF-823B-DEE5-1843-C6BB725DA54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{16EBDDEF-823B-DEE5-1843-C6BB725DA54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16EBDDEF-823B-DEE5-1843-C6BB725DA54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16EBDDEF-823B-DEE5-1843-C6BB725DA54D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5ED136-17AE-332C-2317-D351C0872350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5ED136-17AE-332C-2317-D351C0872350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5ED136-17AE-332C-2317-D351C0872350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5ED136-17AE-332C-2317-D351C0872350}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8869C764-686B-A6B2-E6AC-BBCA9BB6FF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8869C764-686B-A6B2-E6AC-BBCA9BB6FF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8869C764-686B-A6B2-E6AC-BBCA9BB6FF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
