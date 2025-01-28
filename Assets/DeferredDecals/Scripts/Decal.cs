@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 namespace HG.DeferredDecals
 {
@@ -40,7 +41,9 @@ namespace HG.DeferredDecals
         {
             if (!m_Material)
                 return;
-
+            
+            
+            
             DeferredDecalSystem.Instance?.AddDecal(this);
         }
 
@@ -80,6 +83,19 @@ namespace HG.DeferredDecals
             DeferredDecalSystem.Instance?.RemoveDecal(this);
         }
 
+        public void OnDisplayPicture(string path)
+        {
+            if (File.Exists(path))
+            {
+                byte[] data = File.ReadAllBytes(path);
+                Texture2D texture = new Texture2D(1, 1);
+                if (texture.LoadImage(data))
+                {
+                    transform.Find("picture").gameObject.GetComponent<Renderer>().material.mainTexture = texture;
+                }
+            }
+        }
+        
 #if UNITY_EDITOR
         private void DrawGizmo(bool selected)
         {

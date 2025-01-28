@@ -93,11 +93,11 @@ Material:
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 1
-    - _GlossinessPow: 1
+    - _GlossinessPow: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPow: 0.1
+    - _NormalPow: 0
     - _NormalScale: 1
     - _NormalTolerance: -1
     - _OcclusionStrength: 1
