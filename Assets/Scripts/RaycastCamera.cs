@@ -217,7 +217,8 @@ public class RaycastCamera : MonoBehaviour
 
     private void LoadCSV()
     {
-        TextAsset csvFile = Resources.Load<TextAsset>("data-csv-virgule"); // Assurez-vous que le fichier est dans le dossier "Resources"
+        //TextAsset csvFile = Resources.Load<TextAsset>("data-csv-virgule"); // Assurez-vous que le fichier est dans le dossier "Resources"
+        TextAsset csvFile = Resources.Load<TextAsset>("data-updated");
         if (csvFile == null)
         {
             Debug.LogError("Fichier CSV introuvable !");

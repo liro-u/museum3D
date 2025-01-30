@@ -75,6 +75,7 @@
     <Compile Include="Assets\Battlehub\RTEditor\Scripts\Editor\RuntimeEditorEditor.cs" />
     <Compile Include="Assets\Battlehub\MeshDeformer2\Spline\Scripts\Editor\SplineEditor.cs" />
     <Compile Include="Assets\Battlehub\MeshEditor\Scripts\Editor\DrawNormalsEditor.cs" />
+    <Compile Include="Assets\Editor\MaterialFromImage.cs" />
     <Compile Include="Assets\Battlehub\RTEditor\Scripts\Editor\RuntimeEditorMenu.cs" />
     <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\Editor\CommandsPanel.cs" />
     <Compile Include="Assets\Battlehub\MeshDeformer2\Spline\Scripts\Editor\SplineControlPointEditor.cs" />
