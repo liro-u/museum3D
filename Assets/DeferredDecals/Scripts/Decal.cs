@@ -50,7 +50,7 @@ namespace HG.DeferredDecals
             Vector3 position = transform.position;
 
             Quaternion quat = Quaternion.identity;
-            quat.SetLookRotation(transform.forward, Vector3.Cross(transform.forward, transform.right));
+            //quat.SetLookRotation(transform.forward, Vector3.Cross(transform.forward, transform.right));
 
             boundPositions[0] = position + quat * new Vector3( scale.x * 0.5f,  scale.y * 0.5f,  scale.z * 0.5f);
             boundPositions[1] = position + quat * new Vector3(-scale.x * 0.5f,  scale.y * 0.5f,  scale.z * 0.5f);
