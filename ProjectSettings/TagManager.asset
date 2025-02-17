@@ -11,6 +11,7 @@ TagManager:
   - Enter1
   - Mont
   - Chartres
+  - DeferredDecal
   layers:
   - Default
   - TransparentFX

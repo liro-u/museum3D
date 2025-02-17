@@ -64,6 +64,17 @@ namespace HG.DeferredDecals
             bounds = GeometryUtility.CalculateBounds(boundPositions, Matrix4x4.identity);
         }
 
+        public void SetMaterial(Material newMaterial)
+        {
+            if (newMaterial == m_Material)
+                return;
+
+            m_Material = newMaterial;
+            DeferredDecalSystem.Instance?.RemoveDecal(this, false);
+            DeferredDecalSystem.Instance?.AddDecal(this);
+        }
+
+
         public void OnDisable()
         {
             DeferredDecalSystem.Instance?.RemoveDecal(this);
