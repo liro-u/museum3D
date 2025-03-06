@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 3829826384380178772}
   - component: {fileID: 3829826384380178770}
   - component: {fileID: 5358042351013272816}
-  - component: {fileID: 7483589575111183881}
-  - component: {fileID: 7067007148093914010}
   m_Layer: 7
   m_Name: Deferred Decal
   m_TagString: Untagged
@@ -96,30 +94,3 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 1, y: 1, z: 1}
   m_FadeFactor: 1
---- !u!114 &7483589575111183881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829826384380178775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c45e7cda1ba1c743869ef6448aa29ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pixelsPerUnit: 250
-  scaleFactor: 0.5
-  depth: 3
---- !u!114 &7067007148093914010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829826384380178775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd94da96f179674dac2176ef2a9bfcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

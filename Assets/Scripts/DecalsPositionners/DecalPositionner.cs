@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEditor;
 
@@ -40,7 +40,7 @@ public class DecalPositionner : MonoBehaviour
             AlignRotationOnlyOnY();
         }*/
 
-        Debug.Log($"✅ Decal ajusté : Scale = ({scaleX}, {scaleY}, {scaleZ}), Rotation Y SEULEMENT modifiée !");
+        /*Debug.Log($"✅ Decal ajusté : Scale = ({scaleX}, {scaleY}, {scaleZ}), Rotation Y SEULEMENT modifiée !");
     }
 
     void AlignRotationOnlyOnY()
@@ -87,4 +87,4 @@ public class DecalPositionner : MonoBehaviour
             ApplyDecalScale();
         }
     }
-}
+}*/
