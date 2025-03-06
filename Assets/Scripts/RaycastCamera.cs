@@ -27,7 +27,7 @@ public class RaycastCamera : MonoBehaviour
     private Dictionary<string, string> textureTitleMapping = new Dictionary<string, string>();
     private Dictionary<string, string> idPathMapping = new Dictionary<string, string>();
     
-    [SerializeField] private float moveDuration = 7f; // Durée de l'animation
+    [SerializeField] private float moveDuration = 3f; // Durée de l'animation
     private Dictionary<Transform, Vector3> initialPositions = new Dictionary<Transform, Vector3>();
 
     
