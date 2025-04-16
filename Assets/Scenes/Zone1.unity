@@ -12793,15 +12793,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5778153394264039993, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
       propertyPath: m_Range
-      value: 1000
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5778153394264039993, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
       propertyPath: m_Color.b
-      value: 0.41320753
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5778153394264039993, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
       propertyPath: m_Color.g
-      value: 0.96800405
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5778153394264039993, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
       propertyPath: m_Color.r
@@ -12809,11 +12809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5778153394264039993, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5778153394264039993, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
       propertyPath: m_SpotAngle
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5778153394264039993, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
       propertyPath: m_InnerSpotAngle
