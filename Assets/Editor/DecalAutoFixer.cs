@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEditor;
 using HG.DeferredDecals;
@@ -8,11 +8,11 @@ public class DecalAutoFixer : MonoBehaviour
     [MenuItem("Outils/Fixer Orientation Decals")]
     public static void FixDecalOrientation()
     {
-        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("DeferredDecal");
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("DecalTest2");
 
         if (taggedObjects.Length == 0)
         {
-            Debug.LogError("Aucun GameObject avec le tag 'DeferredDecal' trouvé !");
+            Debug.LogError("Aucun GameObject avec le tag 'DecalTest' trouvÃ© !");
             return;
         }
 
@@ -39,36 +39,43 @@ public class DecalAutoFixer : MonoBehaviour
             Texture texture = material.mainTexture;
             int width = texture.width;
             int height = texture.height;
-            bool isLandscape = width > height;
+            float ratio = (float)height / width;
 
-            // Réinitialiser la rotation
-            Undo.RecordObject(obj.transform, "Reset Decal Rotation");
+            bool isPortrait = height > width;
+
+            Undo.RecordObject(obj.transform, "Fix Decal Transform");
             obj.transform.localRotation = Quaternion.identity;
 
-            // Ajuster l'échelle uniquement si le decal est en portrait
-            if (!isLandscape)
-            {
-                Vector3 scale = obj.transform.localScale;
-                obj.transform.localScale = new Vector3(scale.y, scale.x, scale.z);
-            }
+            if (isPortrait)
+                obj.transform.Rotate(Vector3.forward, 90f);
 
-            // Ajuster la texture du decal si nécessaire
             if (decalProjector != null)
             {
-                Undo.RecordObject(decalProjector, "Adjust Decal Texture");
+                Undo.RecordObject(decalProjector, "Adjust UV");
+
                 Vector2 tiling = decalProjector.uvScale;
                 Vector2 offset = decalProjector.uvBias;
 
-                if (!isLandscape)
+                if (isPortrait)
                 {
                     decalProjector.uvScale = new Vector2(tiling.y, tiling.x);
                     decalProjector.uvBias = new Vector2(offset.y, offset.x);
                 }
+
+                Vector3 size = decalProjector.size;
+                float baseSize = Mathf.Max(size.x, size.y);
+                decalProjector.size = new Vector3(baseSize, baseSize * ratio, size.z);
+            }
+            else
+            {
+                Vector3 scale = obj.transform.localScale;
+                float baseSize = Mathf.Max(scale.x, scale.y);
+                obj.transform.localScale = new Vector3(baseSize, baseSize * ratio, scale.z);
             }
 
-            Debug.Log($"Fixé : {obj.name} -> {(isLandscape ? "Paysage" : "Portrait")}");
+            Debug.Log($"FixÃ© : {obj.name} â†’ {(isPortrait ? "portrait" : "paysage")} | Ratio: {ratio:F2}");
         }
 
-        Debug.Log("Correction des orientations des decals terminée !");
+        Debug.Log("Correction automatique des decals terminÃ©e !");
     }
 }

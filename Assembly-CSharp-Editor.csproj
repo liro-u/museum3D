@@ -65,6 +65,7 @@
     <Compile Include="Assets\Battlehub\MeshCombiner\Scripts\Editor\CommandsPanel.cs" />
     <Compile Include="Assets\Battlehub\PivotEditor\Scripts\Editor\PivotPointEditor.cs" />
     <Compile Include="Assets\Battlehub\MeshDeformer2\Spline\Scripts\Editor\SplineMenu.cs" />
+    <Compile Include="Assets\Editor\TestMenu.cs" />
     <Compile Include="Assets\Editor\DecalMaterialCycler.cs" />
     <Compile Include="Assets\Battlehub\PivotEditor\Scripts\Editor\MeshToolsMenu.cs" />
     <Compile Include="Assets\Battlehub\MeshEditor\Scripts\Editor\DrawNormalsMenu.cs" />

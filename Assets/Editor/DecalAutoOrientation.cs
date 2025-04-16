@@ -9,7 +9,7 @@ public class DecalAutoOrientation : MonoBehaviour
     [MenuItem("Outils/Auto-Orienter Decals")]
     public static void AutoOrientDecals()
     {
-        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("DeferredDecal");
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("DecalTest2");
 
         if (taggedObjects.Length == 0)
         {

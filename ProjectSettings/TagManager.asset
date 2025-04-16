@@ -12,6 +12,8 @@ TagManager:
   - Mont
   - Chartres
   - DeferredDecal
+  - DecalTest
+  - DecalTest2
   layers:
   - Default
   - TransparentFX
