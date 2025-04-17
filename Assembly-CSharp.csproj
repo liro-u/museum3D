@@ -90,7 +90,6 @@
     <Compile Include="Assets\Battlehub\MeshDeformer2\Demo\Standard Assets\ParticleSystems\Scripts\Explosive.cs" />
     <Compile Include="Assets\Scripts\Message.cs" />
     <Compile Include="Assets\Battlehub\UIControls\Scripts\TreeViewExpander.cs" />
-    <Compile Include="Assets\VideoTextures\OnlineVideoLoader.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Battlehub\Integration\IntegrationCommon.cs" />
     <Compile Include="Assets\Battlehub\RTHandles\Scripts\PositionHandle.cs" />
@@ -104,6 +103,7 @@
     <Compile Include="Assets\Battlehub\MeshDeformer2\Spline\Scripts\SplineFollow.cs" />
     <Compile Include="Assets\Battlehub\UIControls\Scripts\TreeViewItem.cs" />
     <Compile Include="Assets\Scripts\MessageManager.cs" />
+    <Compile Include="Assets\Laterns and candles\scripts\ExtendedFlycam.cs" />
     <Compile Include="Assets\Battlehub\RTHandles\Scripts\Grid.cs" />
     <Compile Include="Assets\Battlehub\MeshDeformer2\Demo\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
     <Compile Include="Assets\Battlehub\RTHandles\Scripts\GLRenderer.cs" />
@@ -157,6 +157,7 @@
     <Compile Include="Assets\Battlehub\Integration\MeshDeformerIntegration.cs" />
     <Compile Include="Assets\Scripts\WoodenDoor.cs" />
     <Compile Include="Assets\Battlehub\MeshDeformer2\Demo\Scripts\TrainSpeed.cs" />
+    <Compile Include="Assets\Laterns and candles\scripts\CameraFacing.cs" />
     <Compile Include="Assets\Battlehub\MeshDeformer2\Scripts\MeshDeformerRuntimeCmd.cs" />
     <Compile Include="Assets\Battlehub\MeshCombiner\Scripts\MeshUtils.cs" />
   </ItemGroup>
@@ -179,6 +180,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Toby Fredson\Modular Dungeon Catacombs - Mobile\Prefabs\1. Main Prefab Folder.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Laterns and candles\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Toby Fredson\Third Party\Custom Tree Importer v3\CTI Runtime Components\Shaders\Includes\CTI_Builtin4xTreeLibraryTumbling.cginc" />
     <None Include="Assets\Nature Realistic Props Pack\README.txt" />
     <None Include="Assets\Battlehub\RTHandles\Shaders\Resources\VertexColorClip.shader" />
