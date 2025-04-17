@@ -26366,7 +26366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchMin: 0.9
   pitchMax: 1.1
-  movementThreshold: 0.01
+  movementThreshold: 0.02
   stepInterval: 0.6
   grassSteps: {fileID: 805186462}
   stoneSteps: {fileID: 1791703743}
