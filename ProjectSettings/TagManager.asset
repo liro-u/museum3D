@@ -11,6 +11,12 @@ TagManager:
   - Enter1
   - Mont
   - Chartres
+  - DeferredDecal
+  - DecalTest
+  - DecalTest2
+  - GrassSurface
+  - StoneSurface
+  - CathedralSurface
   layers:
   - Default
   - TransparentFX

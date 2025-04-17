@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 namespace HG.DeferredDecals
 {
@@ -40,7 +41,9 @@ namespace HG.DeferredDecals
         {
             if (!m_Material)
                 return;
-
+            
+            
+            
             DeferredDecalSystem.Instance?.AddDecal(this);
         }
 
@@ -50,7 +53,7 @@ namespace HG.DeferredDecals
             Vector3 position = transform.position;
 
             Quaternion quat = Quaternion.identity;
-            quat.SetLookRotation(transform.forward, Vector3.Cross(transform.forward, transform.right));
+            //quat.SetLookRotation(transform.forward, Vector3.Cross(transform.forward, transform.right));
 
             boundPositions[0] = position + quat * new Vector3( scale.x * 0.5f,  scale.y * 0.5f,  scale.z * 0.5f);
             boundPositions[1] = position + quat * new Vector3(-scale.x * 0.5f,  scale.y * 0.5f,  scale.z * 0.5f);
@@ -64,11 +67,35 @@ namespace HG.DeferredDecals
             bounds = GeometryUtility.CalculateBounds(boundPositions, Matrix4x4.identity);
         }
 
+        public void SetMaterial(Material newMaterial)
+        {
+            if (newMaterial == m_Material)
+                return;
+
+            m_Material = newMaterial;
+            DeferredDecalSystem.Instance?.RemoveDecal(this, false);
+            DeferredDecalSystem.Instance?.AddDecal(this);
+        }
+
+
         public void OnDisable()
         {
             DeferredDecalSystem.Instance?.RemoveDecal(this);
         }
 
+        public void OnDisplayPicture(string path)
+        {
+            if (File.Exists(path))
+            {
+                byte[] data = File.ReadAllBytes(path);
+                Texture2D texture = new Texture2D(1, 1);
+                if (texture.LoadImage(data))
+                {
+                    transform.Find("picture").gameObject.GetComponent<Renderer>().material.mainTexture = texture;
+                }
+            }
+        }
+        
 #if UNITY_EDITOR
         private void DrawGizmo(bool selected)
         {
