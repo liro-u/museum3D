@@ -386,6 +386,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: c501a8a7118966c4bb715d3a9efaa62f, type: 3}
+      propertyPath: m_Name
+      value: supports bougies
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c501a8a7118966c4bb715d3a9efaa62f, type: 3}
+      propertyPath: m_Name
+      value: "accroches cha\xEEnes"
+      objectReference: {fileID: 0}
     - target: {fileID: 100130, guid: c501a8a7118966c4bb715d3a9efaa62f, type: 3}
       propertyPath: m_Name
       value: Lustre
