@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExtendedFlycam : MonoBehaviour
+public partial class ExtendedFlycam : MonoBehaviour
 {
 
     /*
@@ -20,7 +20,7 @@ public class ExtendedFlycam : MonoBehaviour
                     Control:    Move slower
                         End:    Toggle cursor locking to screen (you can also press Ctrl+P to toggle play mode on and off).
 	*/
-
+/*
     public float cameraSensitivity = 3;
     public float climbSpeed = 4;
     public float normalMoveSpeed = 10;
@@ -69,5 +69,5 @@ public class ExtendedFlycam : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q)) { transform.position += transform.up * climbSpeed * Time.deltaTime; }
         if (Input.GetKey(KeyCode.E)) { transform.position -= transform.up * climbSpeed * Time.deltaTime; }
-    }
+    }*/
 }

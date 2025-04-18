@@ -27,6 +27,10 @@ namespace HG.DeferredDecals
         [SerializeField] int m_Layer = 20;
         [SerializeField] DecalFeature m_FeatureSet = (DecalFeature)~0;        //TODO: Make this matter
         [SerializeField] Material m_Material = null;
+        
+        [SerializeField] private string picturePath = "";
+        private bool hasLoadedTexture = false;
+        [SerializeField] private float triggerDistance = 5f;
 
         public void OnEnable()
         {
@@ -45,6 +49,23 @@ namespace HG.DeferredDecals
             
             
             DeferredDecalSystem.Instance?.AddDecal(this);
+        }
+        
+        private void Update()
+        {
+            if (hasLoadedTexture || string.IsNullOrEmpty(picturePath))
+                return;
+
+            Transform player = Camera.main?.transform;
+            if (player == null)
+                return;
+
+            float distance = Vector3.Distance(transform.position, player.position);
+            if (distance <= triggerDistance)
+            {
+                OnDisplayPicture(picturePath);
+                hasLoadedTexture = true;
+            }
         }
 
         public void RecalculateBounds()
@@ -91,7 +112,16 @@ namespace HG.DeferredDecals
                 Texture2D texture = new Texture2D(1, 1);
                 if (texture.LoadImage(data))
                 {
-                    transform.Find("picture").gameObject.GetComponent<Renderer>().material.mainTexture = texture;
+                    Transform pictureObj = transform.Find("picture");
+                    if (pictureObj != null)
+                    {
+                        Renderer r = pictureObj.GetComponent<Renderer>();
+                        if (r != null && r.material != null)
+                        {
+                            r.material.mainTexture = texture;
+                            Debug.Log($"Texture chargée sur {name} depuis {path}");
+                        }
+                    }
                 }
             }
         }
