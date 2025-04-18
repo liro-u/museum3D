@@ -888,7 +888,8 @@ MonoBehaviour:
   picture: {fileID: 0}
   video: {fileID: 449001630}
   textObject: {fileID: 919999925}
-  moveDuration: 3
+  audioSource: {fileID: 1040093629}
+  moveDuration: 4
 --- !u!20 &97259528 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8047348627713001885, guid: 5afa5fef86a69864ab629daf4ea0adcf, type: 3}
@@ -10657,6 +10658,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8926657536580124486, guid: 4cd2c6846212f9c448a7fcaa514e6226, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1549165582}
+    - targetCorrespondingSourceObject: {fileID: 8926657536580124486, guid: 4cd2c6846212f9c448a7fcaa514e6226, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1408787696}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd2c6846212f9c448a7fcaa514e6226, type: 3}
 --- !u!4 &475841829 stripped
@@ -18130,7 +18134,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 952843c0d872b574988b2d3b4de4e493, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -21948,6 +21952,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379862581}
   m_Mesh: {fileID: 6629550717849332109, guid: 4f5e5dd4aa2af7048bf96107d2160d64, type: 3}
+--- !u!1 &1408787695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1408787696}
+  - component: {fileID: 1408787698}
+  - component: {fileID: 1408787697}
+  m_Layer: 6
+  m_Name: LightManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1408787696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408787695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 67.33, y: -14.62, z: 38.36}
+  m_LocalScale: {x: 1.4738187, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1204264299}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1408787697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408787695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7953c72694a07914cb2f85137f5921fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirLight: {fileID: 1879673831}
+  playerLight: {fileID: 1944360273}
+--- !u!65 &1408787698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408787695}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1427253372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9148046765128453179, guid: bec3e6bca96e31040a2ef4bd537e8a71, type: 3}
@@ -23448,7 +23520,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 63.2, y: -14.62, z: 38.36}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2.26025, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1204264299}
@@ -23465,8 +23537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7953c72694a07914cb2f85137f5921fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirLight: {fileID: 1879673831}
-  playerLight: {fileID: 1944360273}
+  dirLight: {fileID: 1944360273}
+  playerLight: {fileID: 1879673831}
 --- !u!65 &1549165584
 BoxCollider:
   m_ObjectHideFlags: 0

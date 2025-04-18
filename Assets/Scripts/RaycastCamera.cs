@@ -13,6 +13,7 @@ public class RaycastCamera : MonoBehaviour
     [SerializeField] private GameObject picture;
     [SerializeField] private GameObject video;
     [SerializeField] private GameObject textObject;
+    [SerializeField] private AudioSource audioSource;
     private bool isPictureActive = false;
     private bool isVideoActive = false;
     private bool isText = true;
@@ -260,6 +261,7 @@ public class RaycastCamera : MonoBehaviour
         }
 
         float elapsed = 0f;
+        audioSource.Play();
         while (elapsed < moveDuration)
         {
             elapsed += Time.deltaTime;
