@@ -31,12 +31,12 @@ public class RaycastCamera : MonoBehaviour
     [SerializeField] private float moveDuration = 3f;
     private Dictionary<Transform, Vector3> initialPositions = new Dictionary<Transform, Vector3>();
     private Decal currentActiveDecal = null;
+    private bool isAnimating = false;
 
     void Start()
     {
         LoadCSV();
         TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
-        picture.SetActive(false);
         video.SetActive(false);
         if (isText)
         {
@@ -47,6 +47,8 @@ public class RaycastCamera : MonoBehaviour
 
     void Update()
     {
+        if (isAnimating) return;
+
         TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
         int layerMask = 1 << 7;
 
@@ -81,7 +83,6 @@ public class RaycastCamera : MonoBehaviour
         {
             if (isPictureActive)
             {
-                picture.SetActive(false);
                 isPictureActive = false;
                 if (currentActiveDecal != null)
                 {
@@ -174,6 +175,7 @@ public class RaycastCamera : MonoBehaviour
         if (pictureRenderer == null) return;
 
         pictureRenderer.material.mainTexture = texture;
+        pictureRenderer.material.mainTextureScale = new Vector2(-1, -1);
     }
 
     IEnumerator FadeIn(GameObject mediaObject, float duration)
@@ -222,10 +224,12 @@ public class RaycastCamera : MonoBehaviour
 
     private IEnumerator AnimateWallMovement(Decal decal, bool moveForward)
     {
+        isAnimating = true;
+
         DecalProjector projector = decal.GetComponent<DecalProjector>();
         if (projector != null && !moveForward)
             projector.enabled = true;
-        
+
         Transform[] children = new[] {
             decal.transform.Find("picture"),
             decal.transform.Find("downWall"),
@@ -236,12 +240,16 @@ public class RaycastCamera : MonoBehaviour
 
         foreach (var child in children)
         {
-            if (child == null) yield break;
+            if (child == null)
+            {
+                isAnimating = false;
+                yield break;
+            }
             if (!initialPositions.ContainsKey(child))
                 initialPositions[child] = child.localPosition;
         }
 
-        float offset = 0.3f * decal.transform.localScale.z;
+        float offset = 0.4f * decal.transform.localScale.z;
         Vector3[] startPositions = new Vector3[children.Length];
         Vector3[] endPositions = new Vector3[children.Length];
 
@@ -265,8 +273,10 @@ public class RaycastCamera : MonoBehaviour
 
         for (int i = 0; i < children.Length; i++)
             children[i].localPosition = endPositions[i];
-        
+
         if (projector != null && moveForward)
             projector.enabled = false;
+
+        isAnimating = false;
     }
 }

@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbdb0bcc7e5b3442b06c7c00d9e27a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  picture: {fileID: 1364704652}
+  picture: {fileID: 0}
   video: {fileID: 449001630}
   textObject: {fileID: 919999925}
   moveDuration: 3
@@ -18584,22 +18584,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6120287476141206745, guid: c22606d89789a9f43b991369892b1445, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6120287476141206745, guid: c22606d89789a9f43b991369892b1445, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6120287476141206745, guid: c22606d89789a9f43b991369892b1445, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -840
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6120287476141206745, guid: c22606d89789a9f43b991369892b1445, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6120287475964935292, guid: c22606d89789a9f43b991369892b1445, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6120287475085508960, guid: c22606d89789a9f43b991369892b1445, type: 3}
       insertIndex: -1
@@ -21775,11 +21776,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da26586de065767498fe87980cae2f65, type: 3}
---- !u!1 &1364704652 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6120287476141206725, guid: c22606d89789a9f43b991369892b1445, type: 3}
-  m_PrefabInstance: {fileID: 1119593703}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1369572825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22971,19 +22967,43 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 66.19617
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.419998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.7763824
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.94114393
       objectReference: {fileID: 0}
     - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.33800632
       objectReference: {fileID: 0}
     - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
       propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -39.511
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919989801410311320, guid: 9597caf9de9992340be089277de69716, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5919989801410311321, guid: 9597caf9de9992340be089277de69716, type: 3}
@@ -26630,7 +26650,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1644396815}
+  m_Mesh: {fileID: 1485055752}
 --- !u!33 &1996236384
 MeshFilter:
   m_ObjectHideFlags: 10
